@@ -5,8 +5,6 @@
 
 static IApp *app = nullptr;
 
-
-
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_xinlan_vbovao_NativeBridge_init(JNIEnv *env, jclass type) {
@@ -48,8 +46,7 @@ Java_com_xinlan_vbovao_NativeBridge_setAssetManager(JNIEnv *env, jclass type, jo
 
     __android_log_print(ANDROID_LOG_ERROR , "panyi tips" , "%s" , "env setsetset...");
 
-    readAssetFile("panyi.txt");
-
+    //readAssetFile("panyi.txt");
 
 //    if(gEnv == nullptr){
 //        __android_log_print(ANDROID_LOG_ERROR , "panyitest" , "env is null");

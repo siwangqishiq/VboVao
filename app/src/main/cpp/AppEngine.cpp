@@ -7,6 +7,9 @@
 #include <malloc.h>
 #include <cstring>
 
+JNIEnv *gJniEnv;
+jobject gAssetManager;
+
 int readAssetFile(const char *filename){
     if(gJniEnv == nullptr){
         __android_log_print(ANDROID_LOG_ERROR , "panyitest" , "gJniEnv is null");
@@ -31,7 +34,8 @@ int readAssetFile(const char *filename){
 }
 
 void AppEngine::init() {
-    //readAssetFile("panyi.txt");
+    readAssetFile("panyi.txt");
+
     glGenBuffers(1,vtxBuf);
     glBindBuffer(GL_ARRAY_BUFFER , vtxBuf[0]);
 

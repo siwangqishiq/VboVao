@@ -12,8 +12,8 @@
 #include <android/asset_manager.h>
 #include <android/asset_manager_jni.h>
 
-static JNIEnv *gJniEnv;
-static jobject gAssetManager;
+extern JNIEnv *gJniEnv;
+extern jobject gAssetManager;
 
 int readAssetFile(const char *filename);
 
