@@ -2,10 +2,21 @@
 // Created by 潘易 on 2018/12/25.
 //
 
+
+
 #ifndef VBOVAO_APPENGINE_H
 #define VBOVAO_APPENGINE_H
 
 #include "GLES3/gl3.h"
+#include <jni.h>
+#include <android/asset_manager.h>
+#include <android/asset_manager_jni.h>
+
+static JNIEnv *gJniEnv;
+static jobject gAssetManager;
+
+int readAssetFile(const char *filename);
+
 
 class IApp{
 public:
@@ -17,7 +28,8 @@ public:
 };
 
 class AppEngine : public IApp{
-
+protected:
+    GLuint vtxBuf[1];
 public:
     void init();
 

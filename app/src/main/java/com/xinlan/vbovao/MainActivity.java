@@ -20,17 +20,21 @@ public class MainActivity extends AppCompatActivity {
         //String s = info.getGlEsVersion();
         mSurfaceView = new MainSurfaceView(this);
         setContentView(mSurfaceView);
+
+        //NativeBridge.readFile(getAssets());
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        mSurfaceView.onPause();
+        if(mSurfaceView != null)
+            mSurfaceView.onPause();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        mSurfaceView.onResume();
+        if(mSurfaceView != null)
+            mSurfaceView.onResume();
     }
 }//end class
